@@ -1,0 +1,369 @@
+{
+  "common": {
+    "navigation": {
+      "about": "من نحن",
+      "services": "الخدمات",
+      "projects": "المشاريع",
+      "safety": "السلامة",
+      "contact": "تواصل معنا",
+      "getQuote": "اطلب عرض سعر"
+    },
+    "buttons": {
+      "getQuote": "اطلب عرض سعر",
+      "viewProjects": "عرض المشاريع",
+      "sendMessage": "إرسال الرسالة",
+      "requestQuote": "طلب عرض سعر",
+      "learnMore": "اعرف المزيد →",
+      "sending": "جارٍ الإرسال...",
+      "viewBefore": "عرض قبل",
+      "viewAfter": "عرض بعد"
+    },
+    "labels": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "company": "الشركة",
+      "message": "الرسالة",
+      "projectType": "نوع المشروع",
+      "description": "وصف مختصر",
+      "attachFiles": "إرفاق ملفات (اختياري)",
+      "selectProjectType": "اختر نوع المشروع"
+    },
+    "projectTypes": {
+      "construction": "تصميم ومخططات تنفيذية",
+      "steelFabrication": "تصنيع",
+      "manufacturing": "تنفيذ ومعالجات نهائية",
+      "maintenance": "صيانة",
+      "other": "أخرى"
+    },
+    "categories": {
+      "all": "الكل",
+      "construction": "إنشاءات",
+      "steelFabrication": "تصنيع فولاذ",
+      "manufacturing": "تصنيع",
+      "facades": "واجهات GFRC/GFRP/GFRG"
+    },
+    "language": {
+      "english": "English",
+      "arabic": "العربية"
+    }
+  },
+  "header": {
+    "logo": {
+      "company": "Elite Specialists Industries",
+      "accent": "EMESSA"
+    },
+    "toggleMenu": "تبديل القائمة",
+    "switchLanguage": "تبديل اللغة"
+  },
+  "hero": {
+    "headline": {
+      "line1": "Elite Specialists Industries",
+      "line2": "EMESSA",
+      "since": "رؤية 2030"
+    },
+    "tagline": "نحن شركة محلية نحوّل رؤاكم إلى واقع متين بتميز \u2066GFRC/GFRP/GFRG\u2069.",
+    "cta": {
+      "getQuote": "اطلب عرض سعر",
+      "viewProjects": "عرض المشاريع"
+    },
+    "chips": {
+      "services": "الخدمات",
+      "projects": "المشاريع",
+      "getQuote": "اطلب عرض سعر"
+    },
+    "stats": {
+      "yearEstablished": "سنة التأسيس",
+      "skilledEmployees": "موظفون مهرة",
+      "completedProjects": "مشاريع مكتملة"
+    },
+    "process": {
+      "kicker": "تنفيذ واجهات GFRC",
+      "pill": "جاهز للتصميم. جودة المصنع. إنهاء بالموقع.",
+      "steps": {
+        "plan": "تصميم",
+        "fabricate": "مخططات",
+        "build": "تصنيع",
+        "commission": "تركيب"
+      }
+    },
+    "ribbon": {
+      "steelFabrication": "GFRC Facades",
+      "industrialConstruction": "GFRP Solutions",
+      "plantMaintenance": "GFRG Panels",
+      "precisionManufacturing": "Design & Engineering",
+      "erectionInstallation": "Shopdrawings",
+      "qualitySafety": "Manufacturing Standards",
+      "onTimeDelivery": "Installation & Touch-ups"
+    },
+    "scrollIndicator": "مرّر لاستكشاف المزيد",
+    "ariaLabels": {
+      "quickLinks": "روابط سريعة",
+      "deliveryWorkflow": "سير عمل التنفيذ",
+      "coreCapabilities": "القدرات الأساسية"
+    }
+  },
+  "projects": {
+    "title": "المشاريع",
+    "subtitle": "مختارات من أعمالنا في واجهات GFRC/GFRP/GFRG.",
+    "filterLabel": "تصفية المشاريع",
+    "hint": "نصيحة: اضغط على البطاقة للتبديل بين قبل/بعد.",
+    "badges": {
+      "before": "قبل",
+      "after": "بعد"
+    },
+    "items": {
+      "kaiaSouthTerminalRehabilitation": {
+        "title": "KAIA South Terminal Rehabilitation",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "alHasaaBridge": {
+        "title": "Al Hasaa Bridge",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "alKhuzamahCompound": {
+        "title": "Al Khuzamah Compound",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "ksauhs": {
+        "title": "King Saud bin Abdulaziz University for Health Sciences (KSAU-HS)",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "kafdParcel405": {
+        "title": "KAFD Parcel 4.05 (5 Stars Hotel)",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "princeAbdulrahmanPalace": {
+        "title": "PRINCE ABDULRAHMAN PALACE",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "laValleMall": {
+        "title": "La Valle Mall",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "sulaimanAlHabibPalace": {
+        "title": "Suliman Al Habib Palace",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "royalPalace": {
+        "title": "Royal Palace",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "privateRestHouse": {
+        "title": "PRIVATE Rest House",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "miskProject": {
+        "title": "MISK PROJECT",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "alQassimUniversity": {
+        "title": "AL QASSIM UNIVERSITY",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      },
+      "alNoorMosque": {
+        "title": "AL NOOR MOSQUE",
+        "description": "تنفيذ واجهات GFRC/GFRP/GFRG وفق أعلى المعايير."
+      }
+    }
+  },
+  "quoteForm": {
+    "title": "احصل على عرض سعر سريع",
+    "subtitle": "أخبرنا عن مشروعك وسنعاود التواصل خلال 24 ساعة.",
+    "success": {
+      "title": "شكرًا لك!",
+      "message": "سنعاود التواصل خلال 24 ساعة."
+    }
+  },
+  "about": {
+    "title": "Elite Specialists Industries (EMESSA)",
+    "lead": "نحن Elite Specialists Industries، رواد السوق في تصميم وإنتاج وتركيب منتجات الألياف الزجاجية المقواة (GFRC-GFRP-GFRG) للواجهات.",
+    "paragraph1": "نفخر بتقديم حلول واجهات عالية الجودة ومستدامة وجذابة بصريًا، لتحويل المباني العادية إلى معالم معمارية مميزة.",
+    "paragraph2": "نحن شركة محلية نحوّل رؤاكم إلى واقع متين بتميز GFRC/GFRP/GFRG.",
+    "paragraph3": "مهمتنا إحداث نقلة في قطاع البناء عبر حلول واجهات GFRC-GFRP-GFRG مبتكرة ومستدامة. نؤمن بقوة الواجهات المصممة بإتقان ونسعى لدفع حدود الممكن مع GFRC.",
+    "stats": {
+      "yearEstablished": "سنة التأسيس",
+      "skilledEmployees": "موظفون مهرة",
+      "completedProjects": "مشاريع مكتملة"
+    },
+    "values": {
+      "expertise": {
+        "title": "تميز GFRC/GFRP/GFRG",
+        "description": "تصميم وإنتاج وتركيب—ضمن فريق واحد مسؤول."
+      },
+      "quality": {
+        "title": "أعلى المعايير",
+        "description": "تصنيع وفق أعلى المعايير مع إجراءات جودة موثقة."
+      },
+      "installation": {
+        "title": "تنفيذ ومعالجات نهائية",
+        "description": "تركيب وتشطيب ومعالجات نهائية بالموقع بدقة عالية."
+      }
+    },
+    "timeline": {
+      "title": "كيف تطورنا",
+      "subtitle": "محطات صنعت فريقنا وقدراتنا ومعاييرنا.",
+      "items": {
+        "founded": {
+          "year": "1990",
+          "title": "التأسيس",
+          "description": "بدأنا كورشة لحام تركّز على أعمال صناعية موثوقة."
+        },
+        "expanded": {
+          "year": "2005",
+          "title": "توسيع الخدمات",
+          "description": "أضفنا تنفيذ مشاريع إنشاءات كاملة وفرق تركيب ميدانية."
+        },
+        "quality": {
+          "year": "2015",
+          "title": "أنظمة الجودة",
+          "description": "وحّدنا إجراءات QA/QC والتوثيق لدعم مشاريع أكبر."
+        },
+        "today": {
+          "year": "اليوم",
+          "title": "شريك متكامل",
+          "description": "إنشاءات وتصنيع فولاذ وتصنيع—ضمن فريق واحد مسؤول."
+        }
+      }
+    },
+    "certifications": {
+      "title": "الشهادات والامتثال",
+      "iso9001": "ISO 9001",
+      "osha": "متوافق مع OSHA",
+      "aws": "معتمد AWS",
+      "epa": "متوافق مع EPA",
+      "titles": {
+        "iso9001": "ISO 9001:2015 لإدارة الجودة",
+        "osha": "الامتثال لمعايير السلامة OSHA",
+        "aws": "اعتماد لحام AWS",
+        "epa": "الامتثال البيئي EPA"
+      }
+    },
+    "badge": {
+      "years": "2017",
+      "label": "سنة التأسيس"
+    },
+    "mission": {
+      "title": "الرسالة",
+      "text": "إحداث نقلة في قطاع البناء عبر حلول واجهات GFRC-GFRP-GFRG مبتكرة ومستدامة."
+    },
+    "documents": {
+      "title": "مستندات الشركة",
+      "subtitle": "قم بإضافة ملفات PDF داخل assets/docs ثم تحميلها من هنا.",
+      "companyProfile": "ملف الشركة",
+      "preQualification": "التأهيل المسبق"
+    },
+    "ariaLabel": "تأسست عام 2017",
+    "alt": "إنشاءات صناعية"
+  },
+  "services": {
+    "title": "الخدمات",
+    "subtitle": "حلول واجهات GFRC/GFRP/GFRG من التصميم حتى التركيب.",
+    "outcomes": {
+      "fastEstimates": {
+        "kicker": "جاهز للتصميم",
+        "text": "تصميم ومخططات تنفيذية لتنفيذ دقيق."
+      },
+      "safetyFirst": {
+        "kicker": "أعلى المعايير",
+        "text": "تصنيع وفق أعلى المعايير."
+      },
+      "onTimeDelivery": {
+        "kicker": "إنهاء بالموقع",
+        "text": "تنفيذ ومعالجات نهائية لنتيجة ممتازة."
+      }
+    },
+    "items": {
+      "construction": {
+        "title": "تصميم ومخططات تنفيذية",
+        "description": "تطوير التصميم والتفاصيل ومخططات التنفيذ لأنظمة واجهات GFRC/GFRP/GFRG."
+      },
+      "steelFabrication": {
+        "title": "تصنيع وفق أعلى المعايير",
+        "description": "إنتاج مصنع مع إجراءات جودة موثقة لتحقيق أعلى المعايير."
+      },
+      "manufacturing": {
+        "title": "تنفيذ ومعالجات نهائية",
+        "description": "تركيب وتشطيب ومعالجات نهائية بالموقع مع الاهتمام بكل التفاصيل."
+      }
+    },
+    "cta": {
+      "title": "تحتاج عرض سعر سريع؟",
+      "description": "أخبرنا عن نطاق الواجهات وسنرد بالخطوات التالية."
+    }
+  },
+  "safety": {
+    "title": "معايير السلامة والجودة",
+    "subtitle": "التزامنا بصفر حوادث وجودة استثنائية يوجّه كل ما نقوم به.",
+    "items": {
+      "osha": {
+        "title": "متوافق مع OSHA",
+        "description": "امتثال كامل لمعايير السلامة OSHA. تدقيقات دورية وتدريب مستمر."
+      },
+      "iso9001": {
+        "title": "معتمد ISO 9001",
+        "description": "أنظمة إدارة الجودة معتمدة وفق ISO 9001:2015."
+      },
+      "zeroIncidents": {
+        "title": "صفر حوادث",
+        "description": "أكثر من سنتين دون حادث مسجّل. ثقافة سلامة في كل مواقع العمل."
+      },
+      "documentedProcedures": {
+        "title": "إجراءات موثقة",
+        "description": "توثيق شامل للسلامة وبروتوكولات الإبلاغ عن الحوادث."
+      }
+    }
+  },
+  "contact": {
+    "title": "ابقَ على تواصل",
+    "subtitle": "الرياض، المملكة العربية السعودية",
+    "info": {
+      "title": "ابقَ على تواصل",
+      "address": {
+        "label": "العنوان",
+        "line1": "الرياض، المملكة العربية السعودية",
+        "line2": ""
+      },
+      "phone": {
+        "label": "الهاتف",
+        "value": "+966 50 3140030"
+      },
+      "email": {
+        "label": "البريد الإلكتروني",
+        "value": "info@elite-industries.net"
+      },
+      "hours": {
+        "label": "ساعات العمل",
+        "value1": "السبت إلى الخميس",
+        "value2": "8:00 ص إلى 5:00 م"
+      }
+    },
+    "map": {
+      "placeholder": "الرياض، المملكة العربية السعودية",
+      "hint": "أضف تضمين خرائط Google هنا",
+      "title": "موقعنا على خرائط Google",
+      "openInMaps": "افتح في خرائط Google"
+    },
+    "successMessage": "شكرًا لك! سنعاود التواصل معك قريبًا."
+  },
+  "footer": {
+    "description": "Elite Specialists Industries (EMESSA). شريكك الموثوق في المقاولات الصناعية والتصنيع.",
+    "quickLinks": {
+      "title": "روابط سريعة"
+    },
+    "documents": {
+      "title": "مستندات الشركة",
+      "companyProfile": "ملف الشركة",
+      "preQualification": "التأهيل المسبق"
+    },
+    "contact": {
+      "title": "تواصل"
+    },
+    "social": {
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    },
+    "copyright": "Elite Specialists Industries (EMESSA). جميع الحقوق محفوظة."
+  }
+}
+

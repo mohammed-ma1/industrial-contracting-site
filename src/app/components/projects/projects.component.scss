@@ -1,0 +1,210 @@
+.projects {
+  background: var(--bg);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+
+  h2 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 968px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projects-controls {
+  max-width: 980px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filter-chip {
+  border: 1px solid var(--border-subtle);
+  background: var(--surface);
+  color: var(--text-secondary);
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition),
+    color var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: rgba(245, 158, 11, 0.22);
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.25);
+  }
+
+  &.active {
+    color: var(--text-primary);
+    border-color: rgba(245, 158, 11, 0.35);
+    background: rgba(245, 158, 11, 0.12);
+  }
+}
+
+.projects-hint {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition);
+
+  &.featured {
+    grid-column: 1 / -1;
+
+    @media (min-width: 969px) {
+      grid-column: 1 / 3;
+    }
+
+    .project-image-wrap {
+      aspect-ratio: 21/9;
+    }
+  }
+
+  &:hover {
+    border-color: rgba(245, 158, 11, 0.2);
+
+    .project-overlay {
+      opacity: 1;
+    }
+
+    .project-image {
+      transform: scale(1.08);
+    }
+  }
+}
+
+.project-image-wrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 10, 11, 0.95) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+
+  .ba-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.35rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(245, 158, 11, 0.22);
+    background: rgba(10, 10, 11, 0.45);
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+  }
+
+  .project-category {
+    color: var(--orange);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+}
+
+.toggle-btn {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background: var(--gradient-accent);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  }
+}
+
+@media (hover: none) {
+  .project-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(10, 10, 11, 0.92) 0%, rgba(10, 10, 11, 0.25) 70%);
+  }
+}
+
+.project-info {
+  padding: 1.25rem;
+
+  h3 {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .project-category {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+  }
+}

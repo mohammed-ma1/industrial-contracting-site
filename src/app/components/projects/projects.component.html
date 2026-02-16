@@ -1,0 +1,57 @@
+<section class="projects section" id="projects">
+  <div class="container">
+    <div class="section-header" [appScrollAnimate]="0.2">
+      <h2>{{ 'projects.title' | translate }}</h2>
+      <p class="section-subtitle">{{ 'projects.subtitle' | translate }}</p>
+    </div>
+
+    <!-- UX: filter + usage hint -->
+    <div class="projects-controls" [appScrollAnimate]="0.2">
+      <div class="filter-chips" role="tablist" [attr.aria-label]="'projects.filterLabel' | translate">
+        @for (cat of categories; track cat) {
+          <button
+            type="button"
+            class="filter-chip"
+            [class.active]="selectedCategory === cat.id"
+            (click)="setCategory(cat.id)"
+            role="tab"
+            [attr.aria-selected]="selectedCategory === cat.id"
+          >
+            {{ cat.labelKey | translate }}
+          </button>
+        }
+      </div>
+      <p class="projects-hint">{{ 'projects.hint' | translate }}</p>
+    </div>
+
+    <div class="projects-grid" appStaggerChildren="0.08" staggerSelector=".project-card">
+      @for (project of filteredProjects; track project.id) {
+        <div class="project-card" [class.featured]="$index === 0">
+          <div class="project-image-wrap" (click)="toggleBeforeAfter(project.id)">
+            <img
+              [src]="showAfter[project.id] ? project.imageAfter : project.imageBefore"
+              [alt]="project.titleKey | translate"
+              class="project-image"
+            />
+            <div class="project-overlay">
+              <span class="ba-badge">{{ showAfter[project.id] ? ('projects.badges.after' | translate) : ('projects.badges.before' | translate) }}</span>
+              <h3>{{ project.titleKey | translate }}</h3>
+              <span class="project-category">{{ ('common.categories.' + project.categoryId) | translate }}</span>
+              <button
+                type="button"
+                class="toggle-btn"
+                (click)="$event.stopPropagation(); toggleBeforeAfter(project.id)"
+              >
+                {{ showAfter[project.id] ? ('common.buttons.viewBefore' | translate) : ('common.buttons.viewAfter' | translate) }}
+              </button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>{{ project.titleKey | translate }}</h3>
+            <span class="project-category">{{ ('common.categories.' + project.categoryId) | translate }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

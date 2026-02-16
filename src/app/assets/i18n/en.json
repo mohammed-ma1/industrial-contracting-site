@@ -1,0 +1,330 @@
+{
+  "common": {
+    "navigation": {
+      "about": "About",
+      "services": "Services",
+      "projects": "Projects",
+      "safety": "Safety",
+      "contact": "Contact",
+      "getQuote": "Get a Quote"
+    },
+    "buttons": {
+      "getQuote": "Get a Quote",
+      "viewProjects": "View Projects",
+      "sendMessage": "Send Message",
+      "requestQuote": "Request Quote",
+      "learnMore": "Learn more →",
+      "sending": "Sending...",
+      "viewBefore": "View Before",
+      "viewAfter": "View After"
+    },
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "message": "Message",
+      "projectType": "Project Type",
+      "description": "Brief Description",
+      "attachFiles": "Attach Files (optional)",
+      "selectProjectType": "Select project type"
+    },
+    "projectTypes": {
+      "construction": "Designing & Shopdrawings",
+      "steelFabrication": "Manufacturing",
+      "manufacturing": "Application & Touch-ups",
+      "maintenance": "Maintenance",
+      "other": "Other"
+    },
+    "categories": {
+      "all": "All",
+      "construction": "Construction",
+      "steelFabrication": "Steel Fabrication",
+      "manufacturing": "Manufacturing",
+      "facades": "GFRC/GFRP/GFRG Facades"
+    },
+    "language": {
+      "english": "English",
+      "arabic": "Arabic"
+    }
+  },
+  "header": {
+    "logo": {
+      "company": "Elite Specialists Industries",
+      "accent": "EMESSA"
+    },
+    "toggleMenu": "Toggle menu",
+    "switchLanguage": "Switch language"
+  },
+  "hero": {
+    "headline": {
+      "line1": "Elite Specialists Industries",
+      "line2": "EMESSA",
+      "since": "Vision 2030"
+    },
+    "tagline": "We are a local business transforming your visions into a durable reality with GFRC/GFRP/GFRG excellence.",
+    "cta": {
+      "getQuote": "Get a Quote",
+      "viewProjects": "View Projects"
+    },
+    "chips": {
+      "services": "Services",
+      "projects": "Projects",
+      "getQuote": "Get a Quote"
+    },
+    "stats": {
+      "yearEstablished": "Year Established",
+      "skilledEmployees": "Skilled Employees",
+      "completedProjects": "Completed Projects"
+    },
+    "process": {
+      "kicker": "GFRC facade delivery",
+      "pill": "Design-ready. Factory-quality. Site-finished.",
+      "steps": {
+        "plan": "Design",
+        "fabricate": "Shopdrawings",
+        "build": "Manufacture",
+        "commission": "Install"
+      }
+    },
+    "ribbon": {
+      "steelFabrication": "GFRC Facades",
+      "industrialConstruction": "GFRP Solutions",
+      "plantMaintenance": "GFRG Panels",
+      "precisionManufacturing": "Design & Engineering",
+      "erectionInstallation": "Shopdrawings",
+      "qualitySafety": "Manufacturing Standards",
+      "onTimeDelivery": "Installation & Touch-ups"
+    },
+    "scrollIndicator": "Scroll to explore",
+    "ariaLabels": {
+      "quickLinks": "Quick links",
+      "deliveryWorkflow": "Our delivery workflow",
+      "coreCapabilities": "Core capabilities"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Selected projects from our portfolio in GFRC/GFRP/GFRG facades.",
+    "filterLabel": "Filter projects",
+    "hint": "Tip: click a card to toggle before/after.",
+    "badges": {
+      "before": "Before",
+      "after": "After"
+    },
+    "items": {
+      "kaiaSouthTerminalRehabilitation": {
+        "title": "KAIA South Terminal Rehabilitation",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "alHasaaBridge": {
+        "title": "Al Hasaa Bridge",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "alKhuzamahCompound": {
+        "title": "Al Khuzamah Compound",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "ksauhs": {
+        "title": "King Saud bin Abdulaziz University for Health Sciences (KSAU-HS)",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "kafdParcel405": {
+        "title": "KAFD Parcel 4.05 (5 Stars Hotel)",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "princeAbdulrahmanPalace": {
+        "title": "PRINCE ABDULRAHMAN PALACE",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "laValleMall": {
+        "title": "La Valle Mall",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "sulaimanAlHabibPalace": {
+        "title": "Suliman Al Habib Palace",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "royalPalace": {
+        "title": "Royal Palace",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "privateRestHouse": {
+        "title": "PRIVATE Rest House",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "miskProject": {
+        "title": "MISK PROJECT",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "alQassimUniversity": {
+        "title": "AL QASSIM UNIVERSITY",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      },
+      "alNoorMosque": {
+        "title": "AL NOOR MOSQUE",
+        "description": "GFRC/GFRP/GFRG facade scope delivered to high standards."
+      }
+    }
+  },
+  "quoteForm": {
+    "title": "Get a Quick Quote",
+    "subtitle": "Tell us about your project and we'll get back to you within 24 hours.",
+    "success": {
+      "title": "Thank You!",
+      "message": "We'll get back to you within 24 hours."
+    }
+  },
+  "about": {
+    "title": "Elite Specialists Industries (EMESSA)",
+    "lead": "We are Elite Specialists Industries, a market leader in the design, production, and installation of Glass Fiber Reinforced Products (GFRC-GFRP-GFRG) facades.",
+    "paragraph1": "Our company prides itself on delivering high-quality, sustainable, and aesthetically appealing facade solutions that transform ordinary buildings into extraordinary architectural landmarks.",
+    "paragraph2": "We are a local business transforming your visions into a durable reality with GFRC/GFRP/GFRG excellence.",
+    "paragraph3": "At Elite Specialists Industries, our mission is to revolutionize the building industry by providing innovative and sustainable GFRC-GFRP-GFRG facade solutions. We believe in the transformative power of well-designed facades and strive to push the boundaries of what's possible with GFRC.",
+    "stats": {
+      "yearEstablished": "Year Established",
+      "skilledEmployees": "Skilled Employees",
+      "completedProjects": "Completed Projects"
+    },
+    "values": {
+      "expertise": {
+        "title": "GFRC/GFRP/GFRG excellence",
+        "description": "Design, production, and installation—under one accountable team."
+      },
+      "quality": {
+        "title": "Highest standards",
+        "description": "Manufacturing according to the highest standards with documented QA/QC."
+      },
+      "installation": {
+        "title": "Application & touch-ups",
+        "description": "On-site installation, finishing, and touch-ups with attention to detail."
+      }
+    },
+    "badge": {
+      "years": "2017",
+      "label": "Year Established"
+    },
+    "mission": {
+      "title": "Mission",
+      "text": "To revolutionize the building industry by providing innovative and sustainable GFRC-GFRP-GFRG facade solutions."
+    },
+    "documents": {
+      "title": "Company Documents",
+      "subtitle": "Download our documents (add the PDF files under assets/docs).",
+      "companyProfile": "Company Profile",
+      "preQualification": "Pre-Qualification"
+    },
+    "ariaLabel": "Established in 2017",
+    "alt": "Industrial construction"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "GFRC/GFRP/GFRG facade solutions from design to installation.",
+    "outcomes": {
+      "fastEstimates": {
+        "kicker": "Design-ready",
+        "text": "Designing and shopdrawings for accurate execution."
+      },
+      "safetyFirst": {
+        "kicker": "Highest standards",
+        "text": "Manufacturing according to the highest standards."
+      },
+      "onTimeDelivery": {
+        "kicker": "Site-finished",
+        "text": "Application and touch-ups for a premium final result."
+      }
+    },
+    "items": {
+      "construction": {
+        "title": "Designing and Shopdrawings",
+        "description": "Design development, detailing, and shop drawings for GFRC/GFRP/GFRG facade systems."
+      },
+      "steelFabrication": {
+        "title": "Manufacturing according to the highest standards",
+        "description": "Factory production with documented QA/QC to meet the highest standards."
+      },
+      "manufacturing": {
+        "title": "Application and touch-ups",
+        "description": "Installation, finishing, and touch-ups on site with attention to every detail."
+      }
+    },
+    "cta": {
+      "title": "Need a quick quote?",
+      "description": "Tell us about your facade scope and we’ll respond with next steps."
+    }
+  },
+  "safety": {
+    "title": "Safety & Quality Standards",
+    "subtitle": "Our commitment to zero incidents and exceptional quality drives everything we do.",
+    "items": {
+      "osha": {
+        "title": "OSHA Compliant",
+        "description": "Full compliance with OSHA safety standards. Regular audits and continuous training."
+      },
+      "iso9001": {
+        "title": "ISO 9001 Certified",
+        "description": "Quality management systems certified to ISO 9001:2015 standards."
+      },
+      "zeroIncidents": {
+        "title": "Zero Incidents",
+        "description": "2+ years without a recordable incident. Safety-first culture across all sites."
+      },
+      "documentedProcedures": {
+        "title": "Documented Procedures",
+        "description": "Comprehensive safety documentation and incident reporting protocols."
+      }
+    }
+  },
+  "contact": {
+    "title": "Stay connected",
+    "subtitle": "Riyadh, Saudi Arabia",
+    "info": {
+      "title": "Stay connected",
+      "address": {
+        "label": "Address",
+        "line1": "Riyadh, Saudi Arabia",
+        "line2": ""
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+966 50 3140030"
+      },
+      "email": {
+        "label": "Email",
+        "value": "info@elite-industries.net"
+      },
+      "hours": {
+        "label": "Hours",
+        "value1": "Saturday to Thursday",
+        "value2": "8:00 am to 5:00 pm"
+      }
+    },
+    "map": {
+      "placeholder": "Riyadh, Saudi Arabia",
+      "hint": "Add your Google Maps embed here",
+      "title": "Google Maps location",
+      "openInMaps": "Open in Google Maps"
+    },
+    "successMessage": "Thank you! We will get back to you soon."
+  },
+  "footer": {
+    "description": "Elite Specialists Industries (EMESSA). Your trusted partner in industrial contracting and manufacturing.",
+    "quickLinks": {
+      "title": "Quick Links"
+    },
+    "documents": {
+      "title": "Company Documents",
+      "companyProfile": "Company Profile",
+      "preQualification": "Pre-Qualification"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "social": {
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    },
+    "copyright": "Elite Specialists Industries (EMESSA). All rights reserved."
+  }
+}
+

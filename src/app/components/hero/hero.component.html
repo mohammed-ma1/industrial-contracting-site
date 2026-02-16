@@ -1,0 +1,156 @@
+<section class="hero" id="hero" #heroSection (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave()">
+  <!-- Floating particles -->
+  <div class="hero-particles" aria-hidden="true">
+    @for (i of particles; track i) {
+      <span class="particle" [style.--delay]="i * 0.5 + 's'" [style.--x]="(i * 17) % 100 + '%'" [style.--y]="(i * 23) % 100 + '%'"></span>
+    }
+  </div>
+
+  <div class="hero-video-wrap">
+    <div class="hero-video-parallax" #videoWrap>
+      <video
+        #heroVideo
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        preload="metadata"
+      >
+        <source
+          src="assets/instruction.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-blueprint" aria-hidden="true"></div>
+    <div class="hero-scanline" aria-hidden="true"></div>
+    <div class="hero-corner hero-corner--tl" aria-hidden="true"></div>
+    <div class="hero-corner hero-corner--tr" aria-hidden="true"></div>
+    <div class="hero-corner hero-corner--bl" aria-hidden="true"></div>
+    <div class="hero-corner hero-corner--br" aria-hidden="true"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-noise" aria-hidden="true"></div>
+  </div>
+
+  <!-- Cursor-follow spotlight -->
+  <div class="hero-spotlight" #spotlight aria-hidden="true"></div>
+
+  <div class="hero-content" #heroContent>
+    <h1 class="hero-headline">
+      <span class="hero-line hero-line-1">
+        <span class="split-wrap" #line1>{{ 'hero.headline.line1' | translate }}</span>
+      </span>
+      <span class="hero-line hero-line-2">
+        <span class="hero-gradient-text" #line2>{{ 'hero.headline.line2' | translate }}</span>
+      </span>
+      <span class="hero-line hero-line-3">
+        <span class="hero-highlight-wrap">
+          <span class="hero-highlight" #highlight>{{ 'hero.headline.since' | translate }}</span>
+        </span>
+      </span>
+    </h1>
+    <div class="hero-layout">
+      <div class="hero-left">
+        <p class="hero-tagline" #tagline>
+          {{ 'hero.tagline' | translate }}
+        </p>
+
+        <div class="hero-cta" #cta>
+          <a href="#quote" class="btn btn-primary magnetic-wrap hero-btn" appMagneticButton>{{ 'hero.cta.getQuote' | translate }}</a>
+          <a href="#projects" class="btn btn-secondary magnetic-wrap hero-btn" appMagneticButton>{{ 'hero.cta.viewProjects' | translate }}</a>
+        </div>
+
+        <div class="hero-chips" [attr.aria-label]="'hero.ariaLabels.quickLinks' | translate">
+          <a class="chip" href="#services">{{ 'hero.chips.services' | translate }}</a>
+          <a class="chip" href="#projects">{{ 'hero.chips.projects' | translate }}</a>
+          <a class="chip chip--primary" href="#quote">{{ 'hero.chips.getQuote' | translate }}</a>
+        </div>
+      </div>
+
+      <div class="hero-right hero-panel">
+        <!-- Quick stats -->
+        <div class="hero-stats" #heroStats>
+          <div class="hero-stat">
+            <span class="stat-value" data-stat>2017</span>
+            <span class="stat-label">{{ 'hero.stats.yearEstablished' | translate }}</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-value" data-stat>70+</span>
+            <span class="stat-label">{{ 'hero.stats.skilledEmployees' | translate }}</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-value" data-stat>15+</span>
+            <span class="stat-label">{{ 'hero.stats.completedProjects' | translate }}</span>
+          </div>
+        </div>
+
+        <div class="hero-process" [attr.aria-label]="'hero.ariaLabels.deliveryWorkflow' | translate">
+          <div class="process-head">
+            <span class="process-kicker">{{ 'hero.process.kicker' | translate }}</span>
+            <span class="process-pill">
+              <span class="pill-dot" aria-hidden="true"></span>
+              {{ 'hero.process.pill' | translate }}
+            </span>
+          </div>
+          <div class="process-track" role="presentation">
+            <span class="process-progress"></span>
+          </div>
+          <div class="process-steps" aria-hidden="true">
+            <span class="step">{{ 'hero.process.steps.plan' | translate }}</span>
+            <span class="step">{{ 'hero.process.steps.fabricate' | translate }}</span>
+            <span class="step">{{ 'hero.process.steps.build' | translate }}</span>
+            <span class="step">{{ 'hero.process.steps.commission' | translate }}</span>
+          </div>
+        </div>
+
+        <!-- Creative UX: capability ribbon -->
+        <div class="hero-ribbon" [attr.aria-label]="'hero.ariaLabels.coreCapabilities' | translate">
+          <div class="ribbon-track" role="presentation">
+            <div class="ribbon-inner">
+              <div class="ribbon-row">
+                <span class="ribbon-item">{{ 'hero.ribbon.steelFabrication' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.industrialConstruction' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.plantMaintenance' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.precisionManufacturing' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.erectionInstallation' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.qualitySafety' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.onTimeDelivery' | translate }}</span>
+              </div>
+              <div class="ribbon-row" aria-hidden="true">
+                <span class="ribbon-item">{{ 'hero.ribbon.steelFabrication' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.industrialConstruction' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.plantMaintenance' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.precisionManufacturing' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.erectionInstallation' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.qualitySafety' | translate }}</span>
+                <span class="ribbon-dot" aria-hidden="true"></span>
+                <span class="ribbon-item">{{ 'hero.ribbon.onTimeDelivery' | translate }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" #scrollIndicator>
+      <span class="scroll-text">{{ 'hero.scrollIndicator' | translate }}</span>
+      <div class="scroll-mouse">
+        <span class="scroll-wheel"></span>
+      </div>
+    </div>
+  </div>
+</section>
