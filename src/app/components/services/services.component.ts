@@ -71,6 +71,63 @@ import { StaggerChildrenDirective } from '../../directives/stagger-children.dire
           </div>
         </div>
 
+        <!-- PDF-inspired "magic": services journey (design → handover) -->
+        <div class="services-journey" [appScrollAnimate]="0.2">
+          <div class="journey-head">
+            <h3>{{ 'services.journey.title' | translate }}</h3>
+            <p>{{ 'services.journey.subtitle' | translate }}</p>
+          </div>
+          <div class="journey-grid" appStaggerChildren="0.08" staggerSelector=".journey-item">
+            <div class="journey-item">
+              <div class="journey-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/><path d="m15 5 4 4"/>
+                </svg>
+              </div>
+              <div class="journey-text">
+                <h4>{{ 'services.journey.items.design.title' | translate }}</h4>
+                <p>{{ 'services.journey.items.design.desc' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="journey-item">
+              <div class="journey-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M3 21h18"/><path d="M7 21V7l5-4 5 4v14"/><path d="M9 21v-6h6v6"/>
+                </svg>
+              </div>
+              <div class="journey-text">
+                <h4>{{ 'services.journey.items.manufacture.title' | translate }}</h4>
+                <p>{{ 'services.journey.items.manufacture.desc' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="journey-item">
+              <div class="journey-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M3 12h18"/><path d="M7 12l-2 9"/><path d="M17 12l2 9"/><path d="M12 12V3"/>
+                </svg>
+              </div>
+              <div class="journey-text">
+                <h4>{{ 'services.journey.items.site.title' | translate }}</h4>
+                <p>{{ 'services.journey.items.site.desc' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="journey-item">
+              <div class="journey-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M12 2v6"/><path d="M5 8h14"/><path d="M6 8l2 14h8l2-14"/><path d="M9 13h6"/><path d="M10 17h4"/>
+                </svg>
+              </div>
+              <div class="journey-text">
+                <h4>{{ 'services.journey.items.handover.title' | translate }}</h4>
+                <p>{{ 'services.journey.items.handover.desc' | translate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="services-cta" [appScrollAnimate]="0.2">
           <div class="cta-left">
             <h3>{{ 'services.cta.title' | translate }}</h3>
@@ -270,6 +327,106 @@ import { StaggerChildrenDirective } from '../../directives/stagger-children.dire
         transform: translateY(-1px);
         box-shadow: 0 18px 50px rgba(245, 158, 11, 0.28);
       }
+    }
+
+    .services-journey {
+      margin-top: 2.25rem;
+      border-radius: 18px;
+      border: 1px solid rgba(245, 158, 11, 0.14);
+      background: rgba(10, 10, 11, 0.22);
+      box-shadow: 0 40px 140px rgba(0, 0, 0, 0.35);
+      padding: 1.35rem 1.35rem 1.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services-journey::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.10), transparent 55%),
+        radial-gradient(circle at 80% 55%, rgba(245, 158, 11, 0.07), transparent 60%);
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    .journey-head {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1rem;
+
+      h3 {
+        margin: 0 0 0.35rem;
+        color: var(--text-primary);
+        font-family: var(--font-body);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        margin: 0;
+        color: var(--text-secondary);
+        max-width: 90ch;
+        line-height: 1.65;
+      }
+    }
+
+    .journey-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+
+      @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .journey-item {
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(10, 10, 11, 0));
+      padding: 1rem 1rem;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .journey-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(245, 158, 11, 0.22);
+      box-shadow: 0 18px 55px rgba(0,0,0,0.25);
+    }
+
+    .journey-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      background: rgba(245, 158, 11, 0.06);
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .journey-text h4 {
+      margin: 0 0 0.25rem;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .journey-text p {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
     }
   `],
 })

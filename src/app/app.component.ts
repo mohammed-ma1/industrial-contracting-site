@@ -3,7 +3,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { QuoteFormComponent } from './components/quote-form/quote-form.component';
 import { AboutComponent } from './components/about/about.component';
+import { CompanyProfileComponent } from './components/company-profile/company-profile.component';
 import { ServicesComponent } from './components/services/services.component';
+import { ClientsPartnersComponent } from './components/clients-partners/clients-partners.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SafetyComponent } from './components/safety/safety.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -17,7 +19,9 @@ import { FooterComponent } from './components/footer/footer.component';
     HeroComponent,
     QuoteFormComponent,
     AboutComponent,
+    CompanyProfileComponent,
     ServicesComponent,
+    ClientsPartnersComponent,
     ProjectsComponent,
     SafetyComponent,
     ContactComponent,
@@ -29,7 +33,9 @@ import { FooterComponent } from './components/footer/footer.component';
       <app-hero />
       <app-quote-form />
       <app-about />
+      <app-company-profile />
       <app-services />
+      <app-clients-partners />
       <app-projects />
       <app-safety />
       <app-contact />

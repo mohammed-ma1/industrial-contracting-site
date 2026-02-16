@@ -251,6 +251,28 @@
     "cta": {
       "title": "Need a quick quote?",
       "description": "Tell us about your facade scope and we’ll respond with next steps."
+    },
+    "journey": {
+      "title": "Our services, end-to-end",
+      "subtitle": "A premium workflow built for technical accuracy, factory quality, and site-ready delivery.",
+      "items": {
+        "design": {
+          "title": "Designing & shopdrawings",
+          "desc": "We turn architectural intent into buildable GFRC panel details—technical and aesthetic."
+        },
+        "manufacture": {
+          "title": "Manufacturing to the highest standards",
+          "desc": "A state-of-the-art factory process aligned with ASTM practices for consistent output."
+        },
+        "site": {
+          "title": "Application & touch-ups",
+          "desc": "We adapt to site conditions while maintaining HSE policies and quality expectations."
+        },
+        "handover": {
+          "title": "Handover to the end user",
+          "desc": "Final checks, finishing details, and documentation for a confident handover."
+        }
+      }
     }
   },
   "safety": {
@@ -306,6 +328,106 @@
       "openInMaps": "Open in Google Maps"
     },
     "successMessage": "Thank you! We will get back to you soon."
+  },
+  "profile": {
+    "title": "Company profile",
+    "subtitle": "Construction you will feel good about. Design, manufacture, install, and handover GFRC/GFRP/GFRG facade packages from Riyadh, Saudi Arabia.",
+    "values": {
+      "title": "Company values",
+      "lead": "We commit to excellence from the start—because our reputation depends on it.",
+      "items": {
+        "excellence": "Excellence from day one",
+        "teamwork": "Superior teamwork",
+        "creativeSolutions": "Creative solutions",
+        "innovation": "Innovative spark"
+      },
+      "body": "Together with our clients, we identify goals, visualize solutions, and map grounded steps to achieve standout results. Strong relationships with partners, suppliers, and our teams are key to delivering on our commitments every time."
+    },
+    "workflow": {
+      "title": "From design to handover",
+      "lead": "A simple, proven workflow that keeps quality high and timelines predictable.",
+      "aria": "Delivery workflow",
+      "steps": {
+        "design": {
+          "title": "Design & shop drawings",
+          "desc": "Technical + aesthetic solutions, detailed shop drawings for GFRC panels."
+        },
+        "manufacture": {
+          "title": "Manufacture to ASTM standards",
+          "desc": "State-of-the-art factory production with consistent quality control."
+        },
+        "site": {
+          "title": "Application & touch-ups",
+          "desc": "On-site adaptation and finishing while maintaining HSE policies."
+        },
+        "handover": {
+          "title": "Handover",
+          "desc": "Final inspection and handover to the end user."
+        }
+      }
+    },
+    "standards": {
+      "title": "Factory & standards",
+      "lead": "Quality, safety, and sustainability baked into every panel we deliver.",
+      "items": {
+        "astm": {
+          "kicker": "ASTM",
+          "text": "Manufacturing standards and material compliance for consistent performance."
+        },
+        "hse": {
+          "kicker": "HSE",
+          "text": "Site execution that adapts to conditions while maintaining safety policies."
+        },
+        "sustainability": {
+          "kicker": "Sustainable",
+          "text": "High-quality, durable, and aesthetically appealing facade solutions."
+        }
+      }
+    },
+    "clients": {
+      "title": "Business clients & partners",
+      "lead": "We collaborate with developers, consultants, contractors, and suppliers to deliver landmark facades.",
+      "items": {
+        "developers": "Developers",
+        "contractors": "Main contractors",
+        "consultants": "Consultants",
+        "architects": "Architects",
+        "suppliers": "Suppliers"
+      }
+    },
+    "doc": {
+      "label": "Company profile PDF",
+      "cta": "Open profile",
+      "hint": "To enable this link, place your PDF at: assets/docs/elite-profile.pdf"
+    }
+  },
+  "clientsPartners": {
+    "title": "Business clients & partners",
+    "subtitle": "A snapshot of the organizations we work with—and the ecosystem we deliver with.",
+    "aria": {
+      "tabs": "Clients and partners tabs"
+    },
+    "tabs": {
+      "clients": "Business clients",
+      "partners": "Business partners"
+    },
+    "trust": {
+      "astm": { "k": "ASTM", "v": "Factory standards aligned with ASTM practices." },
+      "hse": { "k": "HSE", "v": "Execution that adapts on-site while maintaining safety policies." },
+      "riyadh": { "k": "Riyadh", "v": "Headquarters and delivery operations based in Riyadh, Saudi Arabia." }
+    },
+    "names": {
+      "mbsCity": "Mohammed Bin Salman City",
+      "baytur": "Saudi Arabian Baytur",
+      "nesma": "Nesma Concrete Solutions",
+      "kimmcoIsover": "Kimmco Isover (Saint-Gobain)",
+      "absar": "Absar",
+      "jazeeraPaints": "Jazeera Paints"
+    },
+    "hints": {
+      "placeholderLogo": "Replace with logo image later",
+      "swapToLogos": "Want the exact PDF look? Add each logo as an image asset and I’ll wire them into this wall with proper sizing and grayscale/hover color."
+    }
   },
   "footer": {
     "description": "Elite Specialists Industries (EMESSA). Your trusted partner in industrial contracting and manufacturing.",
