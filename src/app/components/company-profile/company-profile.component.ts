@@ -116,7 +116,7 @@ import { StaggerChildrenDirective } from '../../directives/stagger-children.dire
 
             <div class="profile-doc" [appScrollAnimate]="0.2">
               <span class="doc-label">{{ 'profile.doc.label' | translate }}</span>
-              <a class="doc-link" href="assets/docs/elite-profile.pdf" target="_blank" rel="noopener">
+              <a class="doc-link" href="https://drive.google.com/drive/folders/1lrSf0GufaJSy6ShoVz_uQyIpnF4zZVi5" target="_blank" rel="noopener noreferrer">
                 {{ 'profile.doc.cta' | translate }}
               </a>
               <small class="doc-hint">{{ 'profile.doc.hint' | translate }}</small>

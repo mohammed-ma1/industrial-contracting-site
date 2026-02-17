@@ -57,20 +57,62 @@ type TabId = 'clients' | 'partners';
           </div>
         </div>
 
-        <div class="wall" [appScrollAnimate]="0.2" appStaggerChildren="0.05" staggerSelector=".tile">
+        <div class="wall" [appScrollAnimate]="0.2" appStaggerChildren="0.05" staggerSelector=".logo-card, .tile">
           @if (tab() === 'clients') {
-            <div class="grid" role="tabpanel" [attr.aria-label]="'clientsPartners.tabs.clients' | translate">
-              <div class="tile tile--big">
-                <span class="tile-title">KAFD</span>
-                <span class="tile-sub">{{ 'clientsPartners.hints.placeholderLogo' | translate }}</span>
-              </div>
-              <div class="tile">
-                <span class="tile-title">{{ 'clientsPartners.names.mbsCity' | translate }}</span>
-                <span class="tile-sub">{{ 'clientsPartners.hints.placeholderLogo' | translate }}</span>
-              </div>
-              <div class="tile">
-                <span class="tile-title">{{ 'clientsPartners.names.baytur' | translate }}</span>
-                <span class="tile-sub">{{ 'clientsPartners.hints.placeholderLogo' | translate }}</span>
+            <div class="clients-panel" role="tabpanel" [attr.aria-label]="'clientsPartners.tabs.clients' | translate">
+              <p class="clients-lead">{{ 'clientsPartners.magic.lead' | translate }}</p>
+
+              <div class="logo-cards">
+                <article class="logo-card" aria-label="KAFD">
+                  <div class="logo-card-chips">
+                    <span class="chip chip--accent">{{ 'clientsPartners.magic.chip.featured' | translate }}</span>
+                    <span class="chip">{{ 'clientsPartners.magic.chip.ksa' | translate }}</span>
+                    <span class="chip">{{ 'clientsPartners.magic.chip.delivery' | translate }}</span>
+                  </div>
+
+                  <div class="logo-frame">
+                    <img class="logo-img logo-img--invert logo-img--kafd" src="assets/img/clients/kafd.svg" alt="KAFD" />
+                  </div>
+
+                  <div class="logo-meta">
+                    <div class="logo-name">KAFD</div>
+                    <div class="logo-desc">{{ 'clientsPartners.magic.cards.kafd' | translate }}</div>
+                  </div>
+                </article>
+
+                <article class="logo-card" [attr.aria-label]="'clientsPartners.names.mbsCity' | translate">
+                  <div class="logo-card-chips">
+                    <span class="chip chip--accent">{{ 'clientsPartners.magic.chip.client' | translate }}</span>
+                    <span class="chip">{{ 'clientsPartners.magic.chip.riyadh' | translate }}</span>
+                    <span class="chip">{{ 'clientsPartners.magic.chip.quality' | translate }}</span>
+                  </div>
+
+                  <div class="logo-frame">
+                    <img class="logo-img logo-img--mbs" src="assets/img/clients/mbs-nonprofit-city.svg" [alt]="'clientsPartners.names.mbsCity' | translate" />
+                  </div>
+
+                  <div class="logo-meta">
+                    <div class="logo-name">{{ 'clientsPartners.names.mbsCity' | translate }}</div>
+                    <div class="logo-desc">{{ 'clientsPartners.magic.cards.mbsCity' | translate }}</div>
+                  </div>
+                </article>
+
+                <article class="logo-card" [attr.aria-label]="'clientsPartners.names.baytur' | translate">
+                  <div class="logo-card-chips">
+                    <span class="chip chip--accent">{{ 'clientsPartners.magic.chip.client' | translate }}</span>
+                    <span class="chip">{{ 'clientsPartners.magic.chip.onSite' | translate }}</span>
+                    <span class="chip">{{ 'clientsPartners.magic.chip.safety' | translate }}</span>
+                  </div>
+
+                  <div class="logo-frame">
+                    <img class="logo-img logo-img--baytur" src="assets/img/clients/baytur.png" [alt]="'clientsPartners.names.baytur' | translate" />
+                  </div>
+
+                  <div class="logo-meta">
+                    <div class="logo-name">{{ 'clientsPartners.names.baytur' | translate }}</div>
+                    <div class="logo-desc">{{ 'clientsPartners.magic.cards.baytur' | translate }}</div>
+                  </div>
+                </article>
               </div>
             </div>
           } @else {
@@ -88,7 +130,6 @@ type TabId = 'clients' | 'partners';
           }
         </div>
 
-        <p class="hint" [appScrollAnimate]="0.2">{{ 'clientsPartners.hints.swapToLogos' | translate }}</p>
       </div>
     </section>
   `,
@@ -104,10 +145,10 @@ type TabId = 'clients' | 'partners';
       position: absolute;
       inset: -2px;
       background:
-        radial-gradient(circle at 20% 18%, rgba(245, 158, 11, 0.14), transparent 55%),
-        radial-gradient(circle at 85% 55%, rgba(245, 158, 11, 0.08), transparent 60%),
-        repeating-linear-gradient(0deg, rgba(245, 158, 11, 0.06) 0 1px, transparent 1px 56px),
-        repeating-linear-gradient(90deg, rgba(245, 158, 11, 0.05) 0 1px, transparent 1px 56px);
+        radial-gradient(circle at 20% 18%, rgba(var(--orange-rgb), 0.14), transparent 55%),
+        radial-gradient(circle at 85% 55%, rgba(var(--orange-rgb), 0.08), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(var(--orange-rgb), 0.06) 0 1px, transparent 1px 56px),
+        repeating-linear-gradient(90deg, rgba(var(--orange-rgb), 0.05) 0 1px, transparent 1px 56px);
       opacity: 0.18;
       pointer-events: none;
       filter: blur(0.2px);
@@ -163,7 +204,7 @@ type TabId = 'clients' | 'partners';
     .tab.active {
       color: var(--white);
       background: var(--gradient-accent);
-      box-shadow: 0 14px 40px rgba(245, 158, 11, 0.18);
+      box-shadow: 0 14px 40px rgba(var(--orange-rgb), 0.18);
     }
 
     .trust-strip {
@@ -181,7 +222,7 @@ type TabId = 'clients' | 'partners';
 
     .trust {
       border-radius: 14px;
-      border: 1px solid rgba(245, 158, 11, 0.14);
+      border: 1px solid rgba(var(--orange-rgb), 0.14);
       background: rgba(10, 10, 11, 0.22);
       padding: 0.9rem 1rem;
     }
@@ -212,10 +253,179 @@ type TabId = 'clients' | 'partners';
       z-index: 1;
     }
 
+    .clients-panel {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .clients-lead {
+      margin: 0 0 0.15rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 90ch;
+    }
+
+    .logo-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      align-items: stretch;
+
+      @media (max-width: 1020px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      @media (max-width: 680px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .logo-card {
+      position: relative;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background:
+        radial-gradient(circle at 22% 18%, rgba(var(--orange-rgb), 0.16), transparent 55%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(10, 10, 11, 0));
+      overflow: hidden;
+      min-height: 320px;
+      padding: 1.05rem 1.05rem 1rem;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 0.95rem;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .logo-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 70% 0%, rgba(255, 255, 255, 0.08), transparent 35%),
+        radial-gradient(circle at 0% 70%, rgba(255, 255, 255, 0.06), transparent 45%);
+      opacity: 0.55;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .logo-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(var(--orange-rgb), 0.24);
+      box-shadow: 0 34px 120px rgba(0, 0, 0, 0.55);
+    }
+
+    .logo-card-chips {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      min-height: 38px;
+      align-items: flex-start;
+    }
+
+    .chip {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+      font-weight: 850;
+      font-size: 0.72rem;
+      padding: 0.38rem 0.6rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .chip--accent {
+      border-color: rgba(var(--orange-rgb), 0.26);
+      background: rgba(var(--orange-rgb), 0.10);
+      color: var(--text-primary);
+    }
+
+    .logo-frame {
+      position: relative;
+      z-index: 1;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.09), transparent 55%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(10, 10, 11, 0.0));
+      padding: 0.95rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 16px 50px rgba(0, 0, 0, 0.32),
+        0 0 0 1px rgba(0, 0, 0, 0.18) inset;
+      min-height: 172px;
+    }
+
+    .logo-img {
+      width: 100%;
+      max-width: 360px;
+      height: 140px;
+      object-fit: contain;
+      opacity: 0.98;
+      transition: transform var(--transition), filter var(--transition), opacity var(--transition);
+    }
+
+    .logo-img--invert {
+      filter: brightness(0) invert(1) drop-shadow(0 12px 34px rgba(0, 0, 0, 0.38));
+    }
+
+    .logo-img--kafd { transform: scale(1.14); transform-origin: center; }
+    .logo-img--mbs { transform: scale(1.22); transform-origin: center; }
+    .logo-img--baytur { transform: scale(1.03); transform-origin: center; }
+
+    .logo-card:hover .logo-img { transform: scale(1.06); opacity: 1; }
+    .logo-card:hover .logo-img--kafd { transform: scale(1.18); }
+    .logo-card:hover .logo-img--mbs { transform: scale(1.26); }
+    .logo-card:hover .logo-img--baytur { transform: scale(1.06); }
+
+    .logo-meta {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .logo-name {
+      color: var(--text-primary);
+      font-weight: 950;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .logo-desc {
+      color: var(--text-secondary);
+      line-height: 1.65;
+      font-size: 0.92rem;
+      max-width: 56ch;
+    }
+
+    :host-context([dir='rtl']) .logo-name,
+    :host-context([dir='rtl']) .chip {
+      letter-spacing: 0;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 1rem;
+    }
+
+    .grid--logos {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      align-items: stretch;
+
+      @media (max-width: 1020px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      @media (max-width: 680px) {
+        grid-template-columns: 1fr;
+      }
     }
 
     .grid--partners {
@@ -242,7 +452,7 @@ type TabId = 'clients' | 'partners';
       content: '';
       position: absolute;
       inset: -40%;
-      background: radial-gradient(circle at 30% 30%, rgba(245, 158, 11, 0.14), transparent 55%);
+      background: radial-gradient(circle at 30% 30%, rgba(var(--orange-rgb), 0.14), transparent 55%);
       transform: translate3d(-10%, -10%, 0);
       opacity: 0;
       transition: opacity var(--transition), transform var(--transition);
@@ -251,7 +461,7 @@ type TabId = 'clients' | 'partners';
 
     .tile:hover {
       transform: translateY(-3px);
-      border-color: rgba(245, 158, 11, 0.22);
+      border-color: rgba(var(--orange-rgb), 0.22);
       box-shadow: 0 30px 120px rgba(0, 0, 0, 0.45);
     }
 
@@ -277,6 +487,8 @@ type TabId = 'clients' | 'partners';
       grid-column: span 6;
       min-height: 140px;
     }
+
+    /* clients now uses .logo-card; keep .tile styles for partners only */
 
     .tile--wide {
       grid-column: span 6;

@@ -170,9 +170,26 @@
   "quoteForm": {
     "title": "Get a Quick Quote",
     "subtitle": "Tell us about your project and we'll get back to you within 24 hours.",
+    "sla": "Reply within 24 hours.",
+    "preferredContact": {
+      "label": "Preferred contact method",
+      "options": {
+        "whatsapp": "WhatsApp",
+        "email": "Email",
+        "call": "Call"
+      }
+    },
+    "email": {
+      "subject": "Quick quote request — {{projectType}}",
+      "body": "New quick quote request\\n\\nName: {{name}}\\nEmail: {{email}}\\nPhone: {{phone}}\\nProject type: {{projectType}}\\nPreferred contact: {{preferredContact}}\\n\\nDescription:\\n{{description}}\\n"
+    },
+    "whatsapp": {
+      "message": "Hello EMESSA, I just requested a quick quote.\\nName: {{name}}\\nProject type: {{projectType}}\\nPhone: {{phone}}"
+    },
     "success": {
       "title": "Thank You!",
-      "message": "We'll get back to you within 24 hours."
+      "message": "We'll get back to you within 24 hours.",
+      "whatsappCta": "Message us on WhatsApp"
     }
   },
   "about": {
@@ -327,6 +344,16 @@
       "title": "Google Maps location",
       "openInMaps": "Open in Google Maps"
     },
+    "sla": "Reply within 24 hours.",
+    "email": {
+      "subject": "New message from {{name}}",
+      "body": "New website message\\n\\nName: {{name}}\\nEmail: {{email}}\\nPhone: {{phone}}\\nCompany: {{company}}\\nProject type: {{projectType}}\\n\\nMessage:\\n{{message}}\\n"
+    },
+    "success": {
+      "title": "Message ready",
+      "message": "Your email client should open with your message pre-filled. If it didn’t, use the button below.",
+      "emailCta": "Open email"
+    },
     "successMessage": "Thank you! We will get back to you soon."
   },
   "profile": {
@@ -398,7 +425,7 @@
     "doc": {
       "label": "Company profile PDF",
       "cta": "Open profile",
-      "hint": "To enable this link, place your PDF at: assets/docs/elite-profile.pdf"
+      "hint": "Opens in Google Drive."
     }
   },
   "clientsPartners": {
@@ -427,6 +454,25 @@
     "hints": {
       "placeholderLogo": "Replace with logo image later",
       "swapToLogos": "Want the exact PDF look? Add each logo as an image asset and I’ll wire them into this wall with proper sizing and grayscale/hover color."
+    },
+    "magic": {
+      "lead": "A curated selection—built on trust, standards, and on-site execution.",
+      "ribbon": "Trusted delivery • Riyadh • Quality • HSE",
+      "chip": {
+        "featured": "Featured",
+        "client": "Client",
+        "ksa": "KSA",
+        "riyadh": "Riyadh",
+        "delivery": "Delivery",
+        "quality": "Quality",
+        "onSite": "On-site",
+        "safety": "Safety"
+      },
+      "cards": {
+        "kafd": "Landmark district delivery support with factory-grade standards.",
+        "mbsCity": "Coordination-ready execution with clear QA/QC checkpoints.",
+        "baytur": "On-site collaboration aligned with safety policies and schedule discipline."
+      }
     }
   },
   "footer": {

@@ -13,6 +13,10 @@ import { Project, ProjectCategoryId } from '../../models/project.interface';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
+  private local(path: string) {
+    return `assets/img/projects/${path}`;
+  }
+
   categories: Array<{ id: 'all' | ProjectCategoryId; labelKey: string }> = [
     { id: 'all', labelKey: 'common.categories.all' },
     { id: 'facades', labelKey: 'common.categories.facades' },
@@ -25,40 +29,40 @@ export class ProjectsComponent {
       id: '1',
       titleKey: 'projects.items.kaiaSouthTerminalRehabilitation.title',
       categoryId: 'facades',
-      imageBefore: 'https://images.unsplash.com/photo-1541976844346-f18aeac57b06?w=800&h=520&fit=crop',
-      imageAfter: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=800&h=520&fit=crop',
+      imageBefore: this.local('kaia-south-terminal-before.jpg'),
+      imageAfter: this.local('kaia-south-terminal-after.webp'),
       descriptionKey: 'projects.items.kaiaSouthTerminalRehabilitation.description',
     },
     {
       id: '2',
       titleKey: 'projects.items.alHasaaBridge.title',
       categoryId: 'facades',
-      imageBefore: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&h=450&fit=crop',
-      imageAfter: 'https://images.unsplash.com/photo-1444724334165-e7050f2229a1?w=600&h=450&fit=crop',
+      imageBefore: this.local('al-hasaa-bridge-before.avif'),
+      imageAfter: this.local('al-hasaa-bridge-after.avif'),
       descriptionKey: 'projects.items.alHasaaBridge.description',
     },
     {
       id: '3',
       titleKey: 'projects.items.alKhuzamahCompound.title',
       categoryId: 'facades',
-      imageBefore: 'https://images.unsplash.com/photo-1529420705456-5c7e04dd043d?w=600&h=450&fit=crop',
-      imageAfter: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=450&fit=crop',
+      imageBefore: this.local('al-khuzamah-compound-before.jpg'),
+      imageAfter: this.local('al-khuzamah-compound-after.jpg'),
       descriptionKey: 'projects.items.alKhuzamahCompound.description',
     },
     {
       id: '4',
       titleKey: 'projects.items.ksauhs.title',
       categoryId: 'facades',
-      imageBefore: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=600&h=450&fit=crop',
-      imageAfter: 'https://images.unsplash.com/photo-1449247613801-ab06418e2861?w=600&h=450&fit=crop',
+      imageBefore: this.local('ksau-hs-before.jpg'),
+      imageAfter: this.local('ksau-hs-after.webp'),
       descriptionKey: 'projects.items.ksauhs.description',
     },
     {
       id: '5',
       titleKey: 'projects.items.kafdParcel405.title',
       categoryId: 'facades',
-      imageBefore: 'https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=600&h=450&fit=crop',
-      imageAfter: 'https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?w=600&h=450&fit=crop',
+      imageBefore: this.local('kafd-parcel-4-05-hotel-before.jpg'),
+      imageAfter: this.local('kafd-parcel-4-05-hotel-after.jpg'),
       descriptionKey: 'projects.items.kafdParcel405.description',
     },
     {
@@ -73,16 +77,16 @@ export class ProjectsComponent {
       id: '7',
       titleKey: 'projects.items.laValleMall.title',
       categoryId: 'facades',
-      imageBefore: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=600&h=450&fit=crop',
-      imageAfter: 'https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=600&h=450&fit=crop',
+      imageBefore: this.local('la-valle-mall-before.jpg'),
+      imageAfter: this.local('la-valle-mall-after.jpg'),
       descriptionKey: 'projects.items.laValleMall.description',
     },
     {
       id: '8',
       titleKey: 'projects.items.sulaimanAlHabibPalace.title',
       categoryId: 'facades',
-      imageBefore: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&h=450&fit=crop',
-      imageAfter: 'https://images.unsplash.com/photo-1551887373-6d3c0f0c2f07?w=600&h=450&fit=crop',
+      imageBefore: this.local('kafd-parcel-4-05-hotel-before.jpg'),
+      imageAfter: this.local('kafd-parcel-4-05-hotel-after.jpg'),
       descriptionKey: 'projects.items.sulaimanAlHabibPalace.description',
     },
     {
@@ -105,8 +109,8 @@ export class ProjectsComponent {
       id: '11',
       titleKey: 'projects.items.miskProject.title',
       categoryId: 'facades',
-      imageBefore: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=450&fit=crop',
-      imageAfter: 'https://images.unsplash.com/photo-1505691723518-36a5ac3b2b80?w=600&h=450&fit=crop',
+      imageBefore: this.local('kaia-south-terminal-before.jpg'),
+      imageAfter: this.local('kaia-south-terminal-after.webp'),
       descriptionKey: 'projects.items.miskProject.description',
     },
     {

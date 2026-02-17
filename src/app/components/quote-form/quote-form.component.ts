@@ -1,8 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ScrollAnimateDirective } from '../../directives/scroll-animate.directive';
+import { I18nService } from '../../services/i18n.service';
+import { QuotePrefillService, QuoteProjectType } from '../../services/quote-prefill.service';
+
+type PreferredContact = 'whatsapp' | 'email' | 'call';
 
 @Component({
   selector: 'app-quote-form',
@@ -21,6 +25,12 @@ import { ScrollAnimateDirective } from '../../directives/scroll-animate.directiv
               </div>
               <h2>{{ 'quoteForm.success.title' | translate }}</h2>
               <p>{{ 'quoteForm.success.message' | translate }}</p>
+
+              <div class="success-actions">
+                <a class="btn btn-secondary" [href]="whatsappHref()" target="_blank" rel="noopener">
+                  {{ 'quoteForm.success.whatsappCta' | translate }}
+                </a>
+              </div>
             </div>
           } @else {
             <h2>{{ 'quoteForm.title' | translate }}</h2>
@@ -56,9 +66,29 @@ import { ScrollAnimateDirective } from '../../directives/scroll-animate.directiv
                 <label for="description">{{ 'common.labels.description' | translate }}</label>
                 <textarea id="description" name="description" [(ngModel)]="formData.description" rows="3" placeholder=" "></textarea>
               </div>
+
+              <div class="form-group">
+                <label>{{ 'quoteForm.preferredContact.label' | translate }}</label>
+                <div class="contact-method" role="radiogroup">
+                  <label class="method">
+                    <input type="radio" name="preferredContact" [(ngModel)]="formData.preferredContact" value="whatsapp" />
+                    <span>{{ 'quoteForm.preferredContact.options.whatsapp' | translate }}</span>
+                  </label>
+                  <label class="method">
+                    <input type="radio" name="preferredContact" [(ngModel)]="formData.preferredContact" value="email" />
+                    <span>{{ 'quoteForm.preferredContact.options.email' | translate }}</span>
+                  </label>
+                  <label class="method">
+                    <input type="radio" name="preferredContact" [(ngModel)]="formData.preferredContact" value="call" />
+                    <span>{{ 'quoteForm.preferredContact.options.call' | translate }}</span>
+                  </label>
+                </div>
+              </div>
+
               <button type="submit" class="btn btn-primary btn-block" [disabled]="loading()">
                 {{ loading() ? ('common.buttons.sending' | translate) : ('common.buttons.requestQuote' | translate) }}
               </button>
+              <p class="sla">{{ 'quoteForm.sla' | translate }}</p>
             </form>
           }
         </div>
@@ -193,6 +223,81 @@ import { ScrollAnimateDirective } from '../../directives/scroll-animate.directiv
       padding: 1rem 0;
     }
 
+    .success-actions {
+      margin-top: 1.25rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .sla {
+      margin: 0.75rem 0 0;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    .contact-method {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.65rem;
+      width: 100%;
+    }
+
+    .method {
+      position: relative;
+      display: block;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      user-select: none;
+      margin: 0;
+    }
+
+    .method input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .method span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.85rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-secondary);
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition), color var(--transition);
+    }
+
+    .method:hover span {
+      transform: translateY(-1px);
+      border-color: rgba(245, 158, 11, 0.22);
+      background: rgba(245, 158, 11, 0.06);
+      color: var(--text-primary);
+    }
+
+    .method input:focus-visible + span {
+      outline: 2px solid var(--orange);
+      outline-offset: 2px;
+    }
+
+    .method input:checked + span {
+      background: var(--gradient-accent);
+      color: var(--white);
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 14px 40px rgba(245, 158, 11, 0.20);
+      transform: translateY(-1px);
+    }
+
     @media (max-width: 600px) {
       .quote-section {
         margin-top: -4.25rem;
@@ -201,6 +306,12 @@ import { ScrollAnimateDirective } from '../../directives/scroll-animate.directiv
 
       .quote-card {
         padding: 2.25rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .contact-method {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -233,23 +344,92 @@ import { ScrollAnimateDirective } from '../../directives/scroll-animate.directiv
   `],
 })
 export class QuoteFormComponent {
+  private i18n = inject(I18nService);
+  private quotePrefill = inject(QuotePrefillService);
+
   formData = {
     name: '',
     email: '',
     phone: '',
-    projectType: '',
+    projectType: '' as QuoteProjectType,
     description: '',
+    preferredContact: 'whatsapp' as PreferredContact,
   };
+
+  private lastSubmitted = {
+    name: '',
+    email: '',
+    phone: '',
+    projectType: '' as QuoteProjectType,
+    description: '',
+    preferredContact: 'whatsapp' as PreferredContact,
+  };
+
   loading = signal(false);
   submitted = signal(false);
 
+  constructor() {
+    const prefilled = this.quotePrefill.consumeProjectType();
+    if (prefilled) this.formData.projectType = prefilled;
+  }
+
+  private projectTypeLabel(projectType: QuoteProjectType): string {
+    if (!projectType) return '';
+    const key =
+      projectType === 'steel'
+        ? 'common.projectTypes.steelFabrication'
+        : `common.projectTypes.${projectType}`;
+    return this.i18n.t(key);
+  }
+
+  private preferredContactLabel(v: PreferredContact): string {
+    return this.i18n.t(`quoteForm.preferredContact.options.${v}`);
+  }
+
+  private emailHref(): string {
+    const to = 'info@elite-industries.net';
+    const pt = this.projectTypeLabel(this.lastSubmitted.projectType);
+    const subject = this.i18n.t('quoteForm.email.subject', { projectType: pt || '-' });
+    const body = this.i18n.t('quoteForm.email.body', {
+      name: this.lastSubmitted.name || '-',
+      email: this.lastSubmitted.email || '-',
+      phone: this.lastSubmitted.phone || '-',
+      projectType: pt || '-',
+      preferredContact: this.preferredContactLabel(this.lastSubmitted.preferredContact),
+      description: this.lastSubmitted.description || '-',
+    });
+    return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  whatsappHref(): string {
+    const phoneE164 = '966503140030';
+    const pt = this.projectTypeLabel(this.lastSubmitted.projectType);
+    const msg = this.i18n.t('quoteForm.whatsapp.message', {
+      name: this.lastSubmitted.name || '-',
+      projectType: pt || '-',
+      phone: this.lastSubmitted.phone || '-',
+    });
+    return `https://wa.me/${phoneE164}?text=${encodeURIComponent(msg)}`;
+  }
+
   onSubmit() {
     this.loading.set(true);
+
+    // Email-only lead capture (opens the user's email client)
     setTimeout(() => {
-      console.log('Quick quote submitted:', this.formData);
+      this.lastSubmitted = { ...this.formData };
+      console.log('Quick quote submitted:', this.lastSubmitted);
+      window.location.href = this.emailHref();
       this.loading.set(false);
       this.submitted.set(true);
-      this.formData = { name: '', email: '', phone: '', projectType: '', description: '' };
-    }, 1200);
+      this.formData = {
+        name: '',
+        email: '',
+        phone: '',
+        projectType: '' as QuoteProjectType,
+        description: '',
+        preferredContact: 'whatsapp' as PreferredContact,
+      };
+    }, 450);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ScrollAnimateDirective } from '../../directives/scroll-animate.directive';
 import { StaggerChildrenDirective } from '../../directives/stagger-children.directive';
@@ -17,48 +17,66 @@ import { I18nService } from '../../services/i18n.service';
           <p class="section-subtitle">{{ 'contact.subtitle' | translate }}</p>
         </div>
         <div class="contact-grid" appStaggerChildren="0.1" staggerSelector=".contact-form, .contact-info">
-          <form class="contact-form" (ngSubmit)="onSubmit()" #form="ngForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contactName">{{ 'common.labels.name' | translate }} *</label>
-                <input id="contactName" name="name" type="text" [(ngModel)]="formData.name" required placeholder=" " />
+          <div class="contact-form" [appScrollAnimate]="0.2">
+            @if (submitted()) {
+              <div class="contact-success">
+                <div class="success-icon" aria-hidden="true">
+                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6L9 17l-5-5"/>
+                  </svg>
+                </div>
+                <h3>{{ 'contact.success.title' | translate }}</h3>
+                <p>{{ 'contact.success.message' | translate }}</p>
+                <div class="success-actions">
+                  <a class="btn btn-primary" [href]="emailHref()" target="_blank" rel="noopener">
+                    {{ 'contact.success.emailCta' | translate }}
+                  </a>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="contactEmail">{{ 'common.labels.email' | translate }} *</label>
-                <input id="contactEmail" name="email" type="email" [(ngModel)]="formData.email" required placeholder=" " />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contactPhone">{{ 'common.labels.phone' | translate }}</label>
-                <input id="contactPhone" name="phone" type="tel" [(ngModel)]="formData.phone" placeholder=" " />
-              </div>
-              <div class="form-group">
-                <label for="contactCompany">{{ 'common.labels.company' | translate }}</label>
-                <input id="contactCompany" name="company" type="text" [(ngModel)]="formData.company" placeholder=" " />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="contactProjectType">{{ 'common.labels.projectType' | translate }}</label>
-              <select id="contactProjectType" name="projectType" [(ngModel)]="formData.projectType">
-                <option value="">{{ 'common.labels.selectProjectType' | translate }}</option>
-                <option value="construction">{{ 'common.projectTypes.construction' | translate }}</option>
-                <option value="steel">{{ 'common.projectTypes.steelFabrication' | translate }}</option>
-                <option value="manufacturing">{{ 'common.projectTypes.manufacturing' | translate }}</option>
-                <option value="maintenance">{{ 'common.projectTypes.maintenance' | translate }}</option>
-                <option value="other">{{ 'common.projectTypes.other' | translate }}</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="contactMessage">{{ 'common.labels.message' | translate }} *</label>
-              <textarea id="contactMessage" name="message" [(ngModel)]="formData.message" rows="5" required placeholder=" "></textarea>
-            </div>
-            <div class="form-group">
-              <label for="contactFile">{{ 'common.labels.attachFiles' | translate }}</label>
-              <input id="contactFile" name="file" type="file" (change)="onFileChange($event)" />
-            </div>
-            <button type="submit" class="btn btn-primary">{{ 'common.buttons.sendMessage' | translate }}</button>
-          </form>
+            } @else {
+              <form (ngSubmit)="onSubmit()" #form="ngForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactName">{{ 'common.labels.name' | translate }} *</label>
+                    <input id="contactName" name="name" type="text" [(ngModel)]="formData.name" required placeholder=" " />
+                  </div>
+                  <div class="form-group">
+                    <label for="contactEmail">{{ 'common.labels.email' | translate }} *</label>
+                    <input id="contactEmail" name="email" type="email" [(ngModel)]="formData.email" required placeholder=" " />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactPhone">{{ 'common.labels.phone' | translate }}</label>
+                    <input id="contactPhone" name="phone" type="tel" [(ngModel)]="formData.phone" placeholder=" " />
+                  </div>
+                  <div class="form-group">
+                    <label for="contactCompany">{{ 'common.labels.company' | translate }}</label>
+                    <input id="contactCompany" name="company" type="text" [(ngModel)]="formData.company" placeholder=" " />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="contactProjectType">{{ 'common.labels.projectType' | translate }}</label>
+                  <select id="contactProjectType" name="projectType" [(ngModel)]="formData.projectType">
+                    <option value="">{{ 'common.labels.selectProjectType' | translate }}</option>
+                    <option value="construction">{{ 'common.projectTypes.construction' | translate }}</option>
+                    <option value="steel">{{ 'common.projectTypes.steelFabrication' | translate }}</option>
+                    <option value="manufacturing">{{ 'common.projectTypes.manufacturing' | translate }}</option>
+                    <option value="maintenance">{{ 'common.projectTypes.maintenance' | translate }}</option>
+                    <option value="other">{{ 'common.projectTypes.other' | translate }}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="contactMessage">{{ 'common.labels.message' | translate }} *</label>
+                  <textarea id="contactMessage" name="message" [(ngModel)]="formData.message" rows="5" required placeholder=" "></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="loading()">
+                  {{ loading() ? ('common.buttons.sending' | translate) : ('common.buttons.sendMessage' | translate) }}
+                </button>
+                <p class="sla">{{ 'contact.sla' | translate }}</p>
+              </form>
+            }
+          </div>
           <div class="contact-info">
             <h3>{{ 'contact.info.title' | translate }}</h3>
             <div class="info-item">
@@ -134,6 +152,51 @@ import { I18nService } from '../../services/i18n.service';
     }
 
     .contact-form {
+      .contact-success {
+        text-align: center;
+        padding: 1.25rem 0;
+
+        h3 {
+          color: var(--text-primary);
+          margin: 0.5rem 0 0.35rem;
+          font-family: var(--font-body);
+          font-weight: 800;
+        }
+
+        p {
+          margin: 0;
+          color: var(--text-secondary);
+          line-height: 1.7;
+        }
+      }
+
+      .success-actions {
+        margin-top: 1.25rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .success-icon {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 0.25rem;
+        border-radius: 50%;
+        background: var(--gradient-accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        box-shadow: 0 14px 40px rgba(245, 158, 11, 0.22);
+      }
+
+      .sla {
+        margin: 0.75rem 0 0;
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        opacity: 0.9;
+      }
+
       .form-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -189,9 +252,6 @@ import { I18nService } from '../../services/i18n.service';
           min-height: 120px;
         }
 
-        input[type="file"] {
-          padding: 0.5rem;
-        }
       }
     }
 
@@ -260,6 +320,9 @@ import { I18nService } from '../../services/i18n.service';
 export class ContactComponent {
   private i18n = inject(I18nService);
 
+  loading = signal(false);
+  submitted = signal(false);
+
   formData = {
     name: '',
     email: '',
@@ -269,23 +332,38 @@ export class ContactComponent {
     message: '',
   };
 
-  onFileChange(event: Event) {
-    const input = event.target as HTMLInputElement;
-    if (input.files?.length) {
-      console.log('File selected:', input.files[0].name);
-    }
+  private lastSubmitted = { ...this.formData };
+
+  emailHref(): string {
+    const to = this.i18n.t('contact.info.email.value');
+    const subject = this.i18n.t('contact.email.subject', { name: this.lastSubmitted.name || '-' });
+    const body = this.i18n.t('contact.email.body', {
+      name: this.lastSubmitted.name || '-',
+      email: this.lastSubmitted.email || '-',
+      phone: this.lastSubmitted.phone || '-',
+      company: this.lastSubmitted.company || '-',
+      projectType: this.lastSubmitted.projectType || '-',
+      message: this.lastSubmitted.message || '-',
+    });
+    return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   onSubmit() {
-    console.log('Contact form submitted:', this.formData);
-    alert(this.i18n.t('contact.successMessage'));
-    this.formData = {
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      projectType: '',
-      message: '',
-    };
+    this.loading.set(true);
+    setTimeout(() => {
+      this.lastSubmitted = { ...this.formData };
+      console.log('Contact form submitted:', this.lastSubmitted);
+      window.location.href = this.emailHref();
+      this.loading.set(false);
+      this.submitted.set(true);
+      this.formData = {
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        projectType: '',
+        message: '',
+      };
+    }, 250);
   }
 }

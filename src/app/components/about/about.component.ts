@@ -66,10 +66,10 @@ import { CounterAnimateDirective } from '../../directives/counter-animate.direct
             <p>{{ 'about.documents.subtitle' | translate }}</p>
           </div>
           <div class="docs-actions">
-            <a class="doc-link" href="assets/docs/company-profile.pdf" target="_blank" rel="noopener">
+            <a class="doc-link" href="https://drive.google.com/drive/folders/1lrSf0GufaJSy6ShoVz_uQyIpnF4zZVi5" target="_blank" rel="noopener noreferrer">
               {{ 'about.documents.companyProfile' | translate }}
             </a>
-            <a class="doc-link" href="assets/docs/pre-qualification.pdf" target="_blank" rel="noopener">
+            <a class="doc-link" href="https://drive.google.com/drive/folders/1h9jtkIrY-u40kek-YMYXLi4UAlrATZL9" target="_blank" rel="noopener noreferrer">
               {{ 'about.documents.preQualification' | translate }}
             </a>
           </div>

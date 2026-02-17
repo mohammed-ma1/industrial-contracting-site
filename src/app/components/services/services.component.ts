@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ScrollAnimateDirective } from '../../directives/scroll-animate.directive';
 import { StaggerChildrenDirective } from '../../directives/stagger-children.directive';
+import { QuotePrefillService } from '../../services/quote-prefill.service';
 
 @Component({
   selector: 'app-services',
@@ -42,7 +43,7 @@ import { StaggerChildrenDirective } from '../../directives/stagger-children.dire
             </div>
             <h3>{{ 'services.items.construction.title' | translate }}</h3>
             <p>{{ 'services.items.construction.description' | translate }}</p>
-            <a href="#contact" class="service-link">{{ 'common.buttons.learnMore' | translate }}</a>
+            <a href="#quote" class="service-link" (click)="prefill('construction')">{{ 'common.buttons.learnMore' | translate }}</a>
           </div>
           <div class="service-card">
             <span class="service-number">02</span>
@@ -55,7 +56,7 @@ import { StaggerChildrenDirective } from '../../directives/stagger-children.dire
             </div>
             <h3>{{ 'services.items.steelFabrication.title' | translate }}</h3>
             <p>{{ 'services.items.steelFabrication.description' | translate }}</p>
-            <a href="#contact" class="service-link">{{ 'common.buttons.learnMore' | translate }}</a>
+            <a href="#quote" class="service-link" (click)="prefill('steel')">{{ 'common.buttons.learnMore' | translate }}</a>
           </div>
           <div class="service-card">
             <span class="service-number">03</span>
@@ -67,7 +68,7 @@ import { StaggerChildrenDirective } from '../../directives/stagger-children.dire
             </div>
             <h3>{{ 'services.items.manufacturing.title' | translate }}</h3>
             <p>{{ 'services.items.manufacturing.description' | translate }}</p>
-            <a href="#contact" class="service-link">{{ 'common.buttons.learnMore' | translate }}</a>
+            <a href="#quote" class="service-link" (click)="prefill('manufacturing')">{{ 'common.buttons.learnMore' | translate }}</a>
           </div>
         </div>
 
@@ -430,4 +431,11 @@ import { StaggerChildrenDirective } from '../../directives/stagger-children.dire
     }
   `],
 })
-export class ServicesComponent {}
+export class ServicesComponent {
+  private quotePrefill = inject(QuotePrefillService);
+
+  prefill(projectType: 'construction' | 'steel' | 'manufacturing') {
+    this.quotePrefill.setProjectType(projectType);
+  }
+}
+

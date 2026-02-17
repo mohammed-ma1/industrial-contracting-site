@@ -32,8 +32,8 @@ import { TranslatePipe } from '@ngx-translate/core';
           </div>
           <div class="footer-docs">
             <h4>{{ 'footer.documents.title' | translate }}</h4>
-            <a href="assets/docs/company-profile.pdf" target="_blank" rel="noopener">{{ 'footer.documents.companyProfile' | translate }}</a>
-            <a href="assets/docs/pre-qualification.pdf" target="_blank" rel="noopener">{{ 'footer.documents.preQualification' | translate }}</a>
+            <a href="https://drive.google.com/drive/folders/1lrSf0GufaJSy6ShoVz_uQyIpnF4zZVi5" target="_blank" rel="noopener noreferrer">{{ 'footer.documents.companyProfile' | translate }}</a>
+            <a href="https://drive.google.com/drive/folders/1h9jtkIrY-u40kek-YMYXLi4UAlrATZL9" target="_blank" rel="noopener noreferrer">{{ 'footer.documents.preQualification' | translate }}</a>
           </div>
           <div class="footer-contact">
             <h4>{{ 'footer.contact.title' | translate }}</h4>
