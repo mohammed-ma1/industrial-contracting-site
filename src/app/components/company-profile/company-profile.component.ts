@@ -129,6 +129,22 @@ import { StaggerChildrenDirective } from '../../directives/stagger-children.dire
   styles: [`
     .profile {
       background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile::before {
+      content: '';
+      position: absolute;
+      inset: -12%;
+      background-image: var(--brand-mark);
+      background-repeat: no-repeat;
+      background-position: 86% 42%;
+      background-size: min(820px, 78vw);
+      opacity: 0.045;
+      filter: blur(0.2px) saturate(0.85) contrast(1.05);
+      mix-blend-mode: soft-light;
+      pointer-events: none;
     }
 
     .section-header {

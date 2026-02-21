@@ -13,7 +13,11 @@ import { I18nService, SupportedLang } from '../../services/i18n.service';
     <header class="header" [class.scrolled]="scrolled()" [class.shrunk]="scrolled()">
       <div class="container header-inner">
         <a href="#" class="logo" #logo>
-          {{ 'header.logo.company' | translate }}<span>{{ 'header.logo.accent' | translate }}</span>
+          <span class="logo-text">
+            {{ 'header.logo.company' | translate }}<span class="logo-accent">{{ 'header.logo.accent' | translate }}</span>
+          </span>
+          <img class="logo-mark" src="assets/img/brand/emessa-logo.png" alt="EMESSA" />
+
         </a>
         <nav class="nav" [class.open]="mobileMenuOpen()">
           <a href="#about" class="nav-link" (click)="closeMenu()"><span>{{ 'common.navigation.about' | translate }}</span></a>
@@ -78,12 +82,56 @@ import { I18nService, SupportedLang } from '../../services/i18n.service';
       color: var(--text-primary);
       letter-spacing: -0.02em;
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
 
-      span {
+      .logo-accent {
         background: var(--gradient-accent);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+      }
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 10px 26px rgba(var(--orange-rgb), 0.18));
+    }
+
+    .header.shrunk .logo-mark {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-text {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    :host-context([dir='rtl']) .logo {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 520px) {
+      .logo {
+        font-size: 1.2rem;
+        gap: 0.5rem;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .logo-text {
+        display: none;
       }
     }
 

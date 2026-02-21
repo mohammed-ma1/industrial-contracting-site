@@ -152,6 +152,22 @@ type TabId = 'clients' | 'partners';
       opacity: 0.18;
       pointer-events: none;
       filter: blur(0.2px);
+      z-index: 0;
+    }
+
+    .cp::after {
+      content: '';
+      position: absolute;
+      inset: -10%;
+      background-image: var(--brand-mark);
+      background-repeat: no-repeat;
+      background-position: 16% 58%;
+      background-size: min(920px, 82vw);
+      opacity: 0.05;
+      filter: blur(0.2px) saturate(0.85) contrast(1.05);
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .cp-head {
