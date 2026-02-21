@@ -68,6 +68,20 @@
   inset: 0;
 }
 
+.hero-video-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  background-image: var(--brand-mark);
+  background-repeat: no-repeat;
+  background-position: 50% 55%;
+  background-size: min(760px, 72vw);
+  opacity: 0.06;
+  filter: blur(0.2px) saturate(0.9) contrast(1.05);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
 .hero-video-parallax {
   position: absolute;
   inset: -15%;
